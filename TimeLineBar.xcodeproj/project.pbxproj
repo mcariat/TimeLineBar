@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		66D6D2E01FFCE0BF00C7E846 /* TimeLineBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 66D6D2DE1FFCE0BF00C7E846 /* TimeLineBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66D6D2E71FFCE0D800C7E846 /* TimeLineBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D6D2E61FFCE0D700C7E846 /* TimeLineBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		66D6D2DB1FFCE0BF00C7E846 /* TimeLineBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TimeLineBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D6D2DE1FFCE0BF00C7E846 /* TimeLineBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeLineBar.h; sourceTree = "<group>"; };
 		66D6D2DF1FFCE0BF00C7E846 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66D6D2E61FFCE0D700C7E846 /* TimeLineBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 			children = (
 				66D6D2DE1FFCE0BF00C7E846 /* TimeLineBar.h */,
 				66D6D2DF1FFCE0BF00C7E846 /* Info.plist */,
+				66D6D2E61FFCE0D700C7E846 /* TimeLineBar.swift */,
 			);
 			path = TimeLineBar;
 			sourceTree = "<group>";
@@ -95,6 +98,7 @@
 				TargetAttributes = {
 					66D6D2DA1FFCE0BF00C7E846 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -131,6 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66D6D2E71FFCE0D800C7E846 /* TimeLineBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +258,7 @@
 		66D6D2E41FFCE0BF00C7E846 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -262,10 +268,12 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = TimeLineBar/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JPLSystem.TimeLineBar;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -274,6 +282,7 @@
 		66D6D2E51FFCE0BF00C7E846 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -283,6 +292,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = TimeLineBar/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JPLSystem.TimeLineBar;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
