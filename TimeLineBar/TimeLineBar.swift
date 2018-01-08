@@ -117,7 +117,10 @@ import UIKit
     }
     
     private var heightIntervalsBar : CGFloat = 10
-    private var widthOfScales : CGFloat = 50
+    public private(set) var widthOfScales : CGFloat = 50
+    public var timeIncrement: Double{
+        return self.timeIncrementationValue
+    }
     private var maxFontSize : CGFloat = 20
     private let ratioFontSizePerWidth : CGFloat = 2.75
     
