@@ -105,6 +105,8 @@ import UIKit
         }
     }
     
+    @IBInspectable var scrollViewBounceEnabled: Bool = false
+    
     private var orientation : OrientationState = .Bottom{
         didSet{
             #if TARGET_INTERFACE_BUILDER
@@ -153,10 +155,18 @@ import UIKit
     
     private func drawMeterLayer(){
         self.layer.sublayers?.removeAll()
-        let backgroundLayer : CAShapeLayer = CAShapeLayer(path: UIBezierPath(rect: self.frame), fillColor: self.backgroundColor)
+        var backgrounfFrame = self.frame
+        var i : Int = 0
+        
+        if(scrollViewBounceEnabled){
+            i = -(ScalesQuantity * 2)
+            self.frame = CGRect(origin: self.frame.origin, size: CGSize(width: self.frame.width + (self.bounds.width * 2), height: self.frame.height))
+            backgrounfFrame = CGRect(x: -widthOfScales * CGFloat(ScalesQuantity * 2), y: self.frame.origin.y, width: self.frame.width + (self.bounds.width * 2), height: self.frame.height)
+        }
+        
+        let backgroundLayer : CAShapeLayer = CAShapeLayer(path: UIBezierPath(rect: backgrounfFrame), fillColor: self.backgroundColor)
         self.layer.addSublayer(backgroundLayer)
         let path : UIBezierPath = UIBezierPath()
-        var i : Int = 0
         while (self.widthOfScales * CGFloat(i) <= self.frame.width) {
             for j in 0...self.intervalQuantity{
                 if(self.widthOfScales * CGFloat(i) + ((self.widthOfScales * CGFloat(j))/(CGFloat(self.intervalQuantity) + 1.0)) > self.frame.width){break}
@@ -229,6 +239,19 @@ extension TimeLineBar{
         case Top
     }
 }
+
+extension TimeLineBar{
+    public func getScalesQuantity()->CGFloat{
+        return self.frame.width / self.widthOfScales
+    }
+    
+    public func setTimeByScale(_ timeByScale: Double){
+        self.timeIncrementationValue = timeByScale
+    }
+    
+}
+
+
 
 // MARK: - Easy creation of CAshapeLayer.
 extension CAShapeLayer{
