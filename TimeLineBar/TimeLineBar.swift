@@ -237,7 +237,7 @@ import UIKit
 }
 
 extension TimeLineBar{
-    private enum OrientationState : Int {
+    public enum OrientationState : Int {
         case Bottom
         case Top
     }
