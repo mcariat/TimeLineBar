@@ -9,7 +9,8 @@
 import UIKit
 
 @IBDesignable public class TimeLineBar : UIView {
-    
+    public var parentWidth: CGFloat = 0
+
     @IBInspectable var OrientationAdapter: Int{
         get{
             return self.orientation.rawValue
@@ -163,7 +164,7 @@ import UIKit
         
         if(scrollViewBounceEnabled){
             i = -(ScalesQuantity * 2)
-            self.frame = CGRect(origin: self.frame.origin, size: CGSize(width: self.frame.width + (self.bounds.width * 2), height: self.frame.height))
+            self.frame = CGRect(origin: self.frame.origin, size: CGSize(width: parentWidth + (self.bounds.width * 2), height: self.frame.height))
             backgrounfFrame = CGRect(x: -widthOfScales * CGFloat(ScalesQuantity * 2), y: self.frame.origin.y, width: self.frame.width + (self.bounds.width * 2), height: self.frame.height)
         }
         
@@ -245,7 +246,7 @@ extension TimeLineBar{
 
 extension TimeLineBar{
     public func getScalesQuantity()->CGFloat{
-        return self.frame.width / self.widthOfScales
+        return parentWidth / self.widthOfScales
     }
     
     public func setTimeByScale(_ timeByScale: Double){

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'TimeLineBar'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Time line bar to seek in scroll view with waveform.'
  
   s.description      = <<-DESC
@@ -12,8 +12,8 @@ Time line bar to seek in scroll view with waveform. Used to replace basic seek b
   s.author           = { 'mCariat' => 'matthieu.cariat@imerir.com' }
   s.source           = { :git => 'https://github.com/mcariat/TimeLineBar.git', :tag => s.version.to_s }
  
-  s.ios.deployment_target = '9.3'
-  s.swift_version = '4.0'
+  s.ios.deployment_target = '10.3'
+  s.swift_version = '5.0'
   s.source_files = 'TimeLineBar/TimeLineBar.swift'
  
 end
