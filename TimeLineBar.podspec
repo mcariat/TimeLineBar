@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'TimeLineBar'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'Time line bar to seek in scroll view with waveform.'
  
   s.description      = <<-DESC
